@@ -30,11 +30,19 @@ const display = () => {
   fruitsList.innerHTML = ''; // TODO: очищаем fruitsList от вложенных элементов,
   // чтобы заполнить актуальными данными из fruits
 
+  const colorClasses = {
+    'фиолетовый': 'fruit_violet',
+    'зеленый': 'fruit_green',
+    'розово-красный': 'fruit_carmazin',
+    'желтый': 'fruit_yellow',
+    'светло-коричневый': 'fruit_lightbrown'
+  };
+
   for (let i = 0; i < fruits.length; i++) {
     // TODO: формируем новый элемент <li> при помощи document.createElement,
     // и добавляем в конец списка fruitsList при помощи document.appendChild
     const li = document.createElement('li');
-    li.classList.add('fruit__item', `fruit_${fruits[i].color}`);
+    li.classList.add('fruit__item', colorClasses[fruits[i].color]);
 
     const info = document.createElement('div');
     info.classList.add('fruit__info');
